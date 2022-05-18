@@ -100,15 +100,15 @@ class sel:
 
     # Differential    
     def rotate_x(v):
-        bpy.ops.transform.rotate(value = v, axis = (1, 0, 0))
+        bpy.ops.transform.rotate(value = v, orient_axis = 'X')
 
     # Differential    
     def rotate_y(v):
-        bpy.ops.transform.rotate(value = v, axis = (0, 1, 0))
+        bpy.ops.transform.rotate(value = v, orient_axis = 'Y')
         
     # Differential    
     def rotate_z(v):
-        bpy.ops.transform.rotate(value = v, axis = (0, 0, 1))        
+        bpy.ops.transform.rotate(value = v, orient_axis = 'Z')        
 
     def transform_apply():
         bpy.ops.object.transform_apply(location=True, rotation=True, scale=True)
@@ -264,11 +264,11 @@ class create:
     """Function Class for CREATING Objects"""
     
     def cube(objName):
-        bpy.ops.mesh.primitive_cube_add(radius = 0.5, location = (0, 0, 0))
+        bpy.ops.mesh.primitive_cube_add(size = 0.5, location = (0, 0, 0))
         act.rename(objName)
         
     def sphere(objName):
-        bpy.ops.mesh.primitive_uv_sphere_add(size = 0.5, location = (0, 0, 0))
+        bpy.ops.mesh.primitive_uv_sphere_add(radius = 0.5, location = (0, 0, 0))
         act.rename(objName)        
         
     def cone(objName):

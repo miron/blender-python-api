@@ -8,7 +8,7 @@ bpy.ops.object.delete()
 
 
 # Create a cube and extrude the top face away from it
-bpy.ops.mesh.primitive_cube_add(radius=0.5, location=(-3, 0, 0))
+bpy.ops.mesh.primitive_cube_add(size=0.5, location=(-3, 0, 0))
 bpy.ops.object.mode_set(mode='EDIT')
 bpy.ops.mesh.select_all(action="DESELECT")
 
@@ -22,13 +22,13 @@ bm.faces[5].select = True
 bpy.ops.mesh.extrude_region_move(TRANSFORM_OT_translate = 
       {"value": (0.3, 0.3, 0.3),
        "constraint_axis": (True, True, True),
-       "constraint_orientation":'NORMAL'})
+       "orient_type":'NORMAL'})
 
 bpy.ops.object.mode_set(mode='OBJECT')
 
 
 # Create a cube and subdivide the top face
-bpy.ops.mesh.primitive_cube_add(radius=0.5, location=(0, 0, 0))
+bpy.ops.mesh.primitive_cube_add(size=0.5, location=(0, 0, 0))
 bpy.ops.object.mode_set(mode='EDIT')
 bpy.ops.mesh.select_all(action="DESELECT")
 
@@ -47,7 +47,7 @@ bpy.ops.object.mode_set(mode='OBJECT')
 
 
 # Create a cube and add a random offset to each vertex
-bpy.ops.mesh.primitive_cube_add(radius=0.5, location=(3, 0, 0))
+bpy.ops.mesh.primitive_cube_add(size=0.5, location=(3, 0, 0))
 bpy.ops.object.mode_set(mode='EDIT')
 bpy.ops.mesh.select_all(action="SELECT")
 bpy.ops.transform.vertex_random(offset = 0.5)
